@@ -8,8 +8,7 @@ document.body.innerHTML = `
   <div class="hole" id="hole4"></div>
   <div class="hole" id="hole5"></div>
   <div class="hole" id="hole6"></div>
-`
-
+`;
 
 test('Game.getId()', () => {
   const mockMath = Object.create(global.Math);
@@ -35,24 +34,23 @@ test('Game.getId() 10 matches', () => {
 });
 
 test('Game.changeHole()', () => {
-  const domElements = document.querySelectorAll('.hole')
+  const domElements = document.querySelectorAll('.hole');
   const game = new Game('hole');
-  
+
   jest.useFakeTimers();
   let spy = jest.spyOn(game, 'getId').mockImplementation(() => 3);
-  
+
   game.changeHole();
-  jest.runOnlyPendingTimers()
+  jest.runOnlyPendingTimers();
   let result = domElements[3].className;
 
   expect(result).toBe('hole gobin_in_hole');
 
   spy = jest.spyOn(game, 'getId').mockImplementation(() => 1);
   game.changeHole();
-  jest.runOnlyPendingTimers()
-  
+  jest.runOnlyPendingTimers();
+
   result = domElements[3].className;
 
   expect(result).toBe('hole');
-
 });

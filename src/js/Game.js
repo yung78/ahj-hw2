@@ -5,10 +5,9 @@ export default class Game {
     this.elementId = 0;
     this.getId = this.getId.bind(this);
   }
-  
 
   getId() {
-    let counter = 0
+    let counter = 0;
     while (true) {
       counter += 1;
       const newId = Math.round(Math.random() * 15);
@@ -16,9 +15,8 @@ export default class Game {
         this.elementId = newId;
         break;
       }
-
       if (counter === 10) {
-        throw new Error('Something wrong! 10 matches!')
+        throw new Error('Something wrong! 10 matches!');
       }
     }
     return this.elementId;

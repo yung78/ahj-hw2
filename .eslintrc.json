@@ -13,12 +13,12 @@
     },
     "rules": {
         "linebreak-style": 0,
-        "no-unused-expressions": 1,
+        "no-unused-vars": 0,
         "operator-linebreak": 1,
         "import/extensions": 0,
         "no-console": 0,
-        "no-useless-constructor": 1,
         "no-restricted-syntax": 1,
-        "no-return-assign": 1
+        "no-return-assign": 1,
+        "no-constant-condition": 0
     }
 }
